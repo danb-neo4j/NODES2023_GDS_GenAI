@@ -5,7 +5,7 @@ This repo contains additional materials related to the Road to NODES 2023: Neo4j
 The presentation video will be published to [Neo4j's YouTube page](https://www.youtube.com/neo4j). *Link to be updated once posted*
 
 ## Presentation Slides
-A PDF of our presentation slides is saved in this repository.
+A [PDF of our presentation slides](https://github.com/danb-neo4j/NODES2023_GDS_GenAI/blob/main/NODES_2023_GDS_GenAI.pdf) is saved in this repository.
 
 ## Agent Neo Public Code Repo
 A public version of the Agent Neo code is availble [in this repository](https://github.com/a-s-g93/agent-neo-public).
