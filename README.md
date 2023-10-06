@@ -2,7 +2,7 @@
 This repo contains additional materials related to the Road to NODES 2023: Neo4j Graph Data Science with Generative AI workshop.
 
 ## Presentation Video
-The presentation video [is available here](https://www.youtube.com/live/SUhM5SOYcd4?feature=shared) on the Neo4j YouTube page.
+The presentation video [is available here](https://www.youtube.com/live/SUhM5SOYcd4?feature=shared) on the Neo4j YouTube page. A [summary of the transcript](https://github.com/danb-neo4j/NODES2023_GDS_GenAI/blob/main/nodes2023_GDS_GenAI_SUMMARY.txt) is also published in this repository.
 
 ## Presentation Slides
 A [PDF of our presentation slides](https://github.com/danb-neo4j/NODES2023_GDS_GenAI/blob/main/NODES_2023_GDS_GenAI.pdf) is saved in this repository.
