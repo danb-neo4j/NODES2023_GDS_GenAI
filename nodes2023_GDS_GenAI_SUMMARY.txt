@@ -1,0 +1,113 @@
+VIDEO TITLE: Road to NODES 2023: Neo4j Graph Data Science with Generative AI 
+VIDEO LINK: https://www.youtube.com/watch?v=SUhM5SOYcd4
+
+
+EXECUTIVE SUMMARY:
+
+* Knowledge graphs and graph data science enable you to analyze and understand applications that are built using large language models.
+* LLM applications can be improved by using documents that are most useful for enhancing LLM conversations.
+* The progress of a conversation can be visualized by tracking the documents that are provided to the LLM.
+
+DETAILED SUMMARY:
+
+We can use graph data science and generative AI to analyze and understand applications that are built using large language models. One way to do this is to build a high-quality data set and log the interactions between the user and the LLM. 
+* The speaker is going to talk about building a high-quality dataset for logging LLM interactions. 
+* The dataset will be used to improve the performance of the large language model. 
+* The speaker will also touch on how the application was built, but that is not the focus of the presentation. 
+* The speaker will then discuss grounding and retrieval-augmented generation. 
+ 
+Grounding allows the LLM to access information that it would not otherwise be able to access. Retrieval-augmented generation also provides higher control over the information an LLM uses when it generates a response.
+* Data scientists should know that grounding is a first and important step in giving the model access to information and seeing demonstrated improvement in performance. 
+* The grounding data needs to be high quality, relevant, and accurate. 
+* A Neo4j Knowledge Graph combined with graph data science algorithms is well suited to building a high-quality grounding data set. 
+* Data scientists should also know that grounding allows the power of LLMs to be combined with insights from an organization's data. This can be research, financial, customer data, or any private internal information.  
+
+The speakers then describe an application they developed to allow people to easily ask questions about how to use neo4j graph data science. The system uses a knowledge graph to provide accurate answers, and it is packaged in a Streamlit front end for easy user interaction. The speakers also discusses some of the challenges they faced in developing the application, such as the need to deal with the training cut off of LLMs and the need to provide clear-cut answers. 
+
+The speakers describe how they built their application.
+* The data used to train the model was scraped from public data sets, including official documentation, developer blogs, and GitHub repos. 
+* The data was split into smaller chunks using LangChain, and embeddings were created using GCP. 
+* The model can cite its sources when providing responses, and users can follow links to get more information. 
+
+Data scientists should pay attention to the data quality and the chunking strategy. 
+* The initial chunking strategy was not good, as it was splitting the documents on characters that didn't exist in all the documents. This resulted in chunks of text that were too long and would never match to be provided as context. 
+* The corrected chunking strategy resulted in a better distribution of chunk sizes, with most of the documents around the target size.
+
+The data model is based on a neo4j Knowledge Graph. 
+* The document nodes are tied to the URL and have a number of properties,
+* The Knowledge Graph (KG) stores the user sessions, messages, and parameters used in the LLM response generation. 
+* The KG also captures the user's rating of the LLM response, which helps to get a better idea of how the LLM is functioning. 
+
+A data scientist can also use the KG to analyze the relationships between the messages and the documents used to generate the response. This information can be used to optimize the LLM response generation and lean towards a particular model for a specific use case.
+
+Knowledge graphs are a powerful tool for data scientists, as they allow for the integration of data from different sources and the visualization of the entire operation. 
+
+In order to improve the performance of the LLM, it is important to focus on curating high-quality data sets that are smaller and more focused. This will allow the LLM to be more efficient and accurate in its responses. In particular: 
+
+The speakers describe ive elements of high-quality grounding data:
+* Relevance to the purpose of the application and the questions that users are expected to ask.
+* Augmenting LLM's knowledge gaps, such as sensitive internal research or R&D efforts, and time frame gaps.
+* Reliable, which is accuracy and correctness of the data.
+* Clean, which is free from errors.
+* Efficient so there are not duplicate entries
+
+The data scientist should ensure that the data is reliable, clean, and efficient. 
+* The data should be accurate and reliable.
+* The data should be curated to remove noise and extra characters.
+* The data should be free of duplicate or near-duplicate information.
+* The data should be pre-processed and exploratory analysis should be performed.
+* The data should be embedded and loaded into the knowledge graph.
+
+The speakers created embeddings, loaded them into the knowledge graph, and used graph data science algorithms to create relationships and generate new insights into the data.
+* First, they created similarity relationships using K nearest neighbors on the text chunk embeddings. This allowed them to create and persist similar similarity relationships among all of the text in the database.
+* Next, they ran a community detection algorithm to identify communities among the context grounding documents. This algorithm works well on a dense similarity graph and helps to add structure to unstructured data.
+* They also ran a centrality algorithm to identify the most influential or important documents in the graph. 
+
+The speakers described various techniques they used. 
+* Eda and data quality tools that scale are needed to find errors and outliers in large data sets.
+* Applying algorithms with some traditional text analysis is a solution that scales. This approach can help improve the overall quality of grounding data sets.
+* The 2D visualization of the graph of the embeddings from the graph can be used to identify distinct communities of documents. Color overlap in the graph indicates that there may be a quality issue with the embeddings or the text.
+
+An important part of building applications that use knowledge graphs and GDs algorithms is understanding what's going on under the hood. This means being able to visualize user interactions with documents and conversations, and using tools like the GDS library and dashboarding tools to make sense of the data. 
+
+One of the key challenges of using these models in production environments is explainability - being able to explain how the model came up with a particular answer. Logging conversations in the same database can be a valuable way to address this challenge. 
+* The progress of a conversation can be visualized by tracking the documents that are used.
+* Documents can be used multiple times in a conversation.
+* The topics that documents are best used for can be identified by analyzing the conversations.
+
+Neo4j and Neo Dash can be used to analyze conversations and provide high-level statistics. Cypher can be used with Neo Dash to create statistics.
+The speakers created a dashboard that provides insights into how the agent Neo application is functioning. The dashboard has three sections: 
+1) User engagement metrics, such as the number of questions asked and the length of conversations. 
+2) LLM-oriented metrics, such as message response ratings and response time. 
+3) Knowledge graph metrics, such as the number of documents and the similarity between communities. 
+
+This dashboard can be customized to include additional metrics and is a valuable tool for evaluating the performance of the agent Neo application.
+The most important points in the context of data science are as follows:
+* The evaluation process allows for iteration and development of the application over time.
+* Different models can be supported and evaluated, including those from OpenAI, Google, and AWS.
+* Fine-tuning of models can be done internally and evaluated.
+* A single database and platform can capture all metrics and relationships among different pieces of the puzzle.
+* Additional statistics can be tracked, such as conversation links, number of turns, response times, and LLMs
+
+The speakers evaluated user interactions with the application:
+* The prompt generation and data retrieval from the graph are relatively stable, but the processing time is taking longer as conversations get longer. This invites us to look at which models are creating this long response time and if we are hitting rate limits.
+* The conversation memory is stored in LangChain, and the payload going back and forth from the model can be much larger as more data is added to the conversation. This can cause longer response times, and we need to log and visualize the relationships among the different conversations to see what elements are causing a slower response
+
+The llm responses are being used to understand and apply some of the same graph-based techniques to understand how users are using the database.
+
+The speakers describe how to use graph-based techniques to understand how users are using a large language model (LLM). 
+* They begin by creating a bipartite graph, which is a graph with two sets of nodes and one-way relationships between them. In this case, the first set of nodes represents the responses that the LLM has provided, and the second set of nodes represents the context documents that were used to generate those responses.
+* The speaker then applies a node similarity algorithm to the bipartite graph. This algorithm creates a similarity score among all of the responses, based on the common context documents that were used to generate them.
+* The responses were clustered based on the topics they mentioned. 
+
+Responses were also rated by users and that the ratings were used to calculate the statistics for each community. The data scientist could use this information to identify trends in the data and to improve the product.
+ 
+Data scientists should be familiar with neo4j and graph data science, which are well-suited to help create, curate, and manage high-quality grounding data sets. Data scientists should also be able to log LLM interactions in the same database, which opens up opportunities for insights and analysis. Data scientists should be able to visualize LLM interactions and grounding data to further understand and interpret how an application is behaving. 
+ 
+The main points of the lecture are as follows:
+1) Context is everything when it comes to building applications.
+2) A Knowledge Graph is a powerful tool for grounding applications.
+3) Knowledge Graphs provide additional value and insights that might not be available from other types of grounding databases.
+4) Building applications on a Knowledge Graph is a team effort.
+5) It is important to maintain your grounding dataset and keep it relevant.
+6) Graph databases are flexible and easy to maintain.
